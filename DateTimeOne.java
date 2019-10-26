@@ -44,11 +44,24 @@ public class DateTimeOne extends MesoDateTimeOneAbstract
 	 * CST (90W): 15:14
 	 */
 	void dateTimeOfOtherCity() {
+		LocalDateTime ldt = LocalDateTime.now();
 		ZonedDateTime GMT = ZonedDateTime.now(ZoneId.of("Etc/GMT-0"));
 		ZonedDateTime BST = ZonedDateTime.now(ZoneId.of("Asia/Dhaka"));
 		ZonedDateTime CST = ZonedDateTime.now(ZoneId.of("America/Chicago"));
 		
-		   
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+
+		System.out.println("Time on Server: " + ldt.format(formatter));
+		System.out.println("GMT: " + GMT.format(formatter));
+		System.out.println("BST (90E): " + BST.format(formatter));
+		System.out.println("CST (90W): " + CST.format(formatter));	
+	}
+
+	void dateTimeDifferentZone() {
+		ZonedDateTime GMT = ZonedDateTime.now(ZoneId.of("Etc/GMT-0"));
+		ZonedDateTime BST = ZonedDateTime.now(ZoneId.of("Asia/Dhaka"));
+		ZonedDateTime CST = ZonedDateTime.now(ZoneId.of("America/Chicago"));
+		  
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm");
 		
 		TIMEZONE_MAP = new HashMap<>();		    	
@@ -58,12 +71,7 @@ public class DateTimeOne extends MesoDateTimeOneAbstract
 		TIMEZONE_MAP.put("CST", "CST: " + CST.format(formatter));
 		
 		for (String key: TIMEZONE_MAP.values())
-			System.out.println(key);
-	}
-
-	void dateTimeDifferentZone() {
-		// TODO Auto-generated method stub
-		
+			System.out.println(key);	
 	}
 
 	void timeZoneHashMap() {
