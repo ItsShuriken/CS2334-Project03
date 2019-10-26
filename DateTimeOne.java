@@ -75,7 +75,7 @@ public class DateTimeOne extends MesoDateTimeOneAbstract
 	}
 
 	void timeZoneHashMap() {
-		// TODO Auto-generated method stub
+		// TODO sorting and adding more zones and hash maps
 		
 	}
    

@@ -1,6 +1,17 @@
+import java.time.LocalDateTime;
 
 public class DateTimeTwo {
 
+	public DateTimeTwo() {
+		
+	}
+	
+	public void daysOfCurrentMonth() {
+		// TODO using this month, find the 10th and 18th day EX: THURSDAY and 8 days later FRIDAY
+		LocalDateTime ldt = LocalDateTime.now();
+
+	}
+	
 	public void dateHashMapSorted() {
 		// TODO Auto-generated method stub
 		
@@ -21,9 +32,6 @@ public class DateTimeTwo {
 		
 	}
 
-	public void daysOfCurrentMonth() {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 }
