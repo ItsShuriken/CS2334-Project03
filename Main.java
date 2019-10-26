@@ -16,7 +16,7 @@ import java.util.TreeMap;
 
 public class Main 
 {
-	public static void main(String[] args) throws IOException 
+	public static void main(String[] args) throws IOException, InterruptedException 
 	{
 		/**
 		 * This project has been divided in sections. 
@@ -36,8 +36,12 @@ public class Main
 		 * If 'Second' is greater than 55, you have to sleep your program for 5 seconds. 
 		 */				
 		
-		/**
-		 * Section 1
+		
+		
+		
+		/*****************
+		 *** Section 1 ***
+		 *****************
 		 * Current value of “Second” will be stored in vlaueOfSecondNow 
 		 * and will print as, "The value of Second now: 58"
 		 * Remember, this is the format only, value should be the current time.
@@ -128,9 +132,13 @@ public class Main
 	    
 	    System.out.println("\n");
 	    DateTimeTwo dateTimeTwo = new DateTimeTwo();
-	    /**
-		 * Section 2
-		 * 
+	    
+	    
+	    
+	    
+	    /*****************
+		 *** Section 2 ***
+		 *****************
 		 * From the next method, following output will be generated. Here, "THURSDAY" and "FRIDAY" are 
 		 * generated from two variables "tenthDay" and "eighteenthtDay"; 
 		 * Code is like: "The tenth day of this month is " + tenthDay + " and eighteenth is " + eighteenthtDay
@@ -197,6 +205,9 @@ public class Main
 		 */
 	    dateTimeTwo.dateHashMapSorted();
 	    System.out.println("\nSorted map:");	    
+	    
+	    
+	    
 	    
 	    /**
 		 * Section 3
