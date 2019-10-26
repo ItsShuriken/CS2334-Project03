@@ -1,3 +1,4 @@
+import java.util.HashMap;
 
 public class MesoEquivalent {
 
@@ -5,7 +6,7 @@ public class MesoEquivalent {
 		// TODO Auto-generated constructor stub
 	}
 
-	public String calAsciiEqual() {
+	public HashMap<String, Integer> calAsciiEqual() { //this was changed from string to hashmap to run it
 		// TODO Auto-generated method stub
 		return null;
 	}
