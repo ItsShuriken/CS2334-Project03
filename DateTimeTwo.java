@@ -2,10 +2,13 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.YearMonth;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Map;
 
 public class DateTimeTwo {
 
@@ -58,32 +61,55 @@ public class DateTimeTwo {
 	
 	
 	public void compareYear() throws IOException {
+		String leapYear;
+
 		readFile();
+		LocalDate now = LocalDate.now();
+
+		for(Map.Entry<LocalDate, Integer> entry : DATES.entrySet()) {
+		    LocalDate key = entry.getKey();
+
+		    if (key.isLeapYear())
+		    	leapYear = " is a leap year";
+		    else
+		    	leapYear = " is not a leap year";
+		   
+		   Period difference = key.until(now);
+		    	
+		   System.out.println(key.getYear() + leapYear + ", and Difference: " + difference.getYears() + " years, " + 
+		    		difference.getMonths() + " months, and " + difference.getDays() + "days.");
 		
-		
+		} //for	
 	}
+	
+	public void dateHashMap() {
+		DateTimeFormatter DFT = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		for(Map.Entry<LocalDate, Integer> entry : DATES.entrySet()) {
+		    LocalDate key = entry.getKey();
+		    Integer value = entry.getValue();
+		    
+		    System.out.println(key.format(DFT) + ":" + value);
+		}
+	}
+	
 	public void dateHashMapSorted() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void dateHashMap() {
-		// TODO Auto-generated method stub
-		
-	}
-
 	private void readFile() throws IOException {
-		BufferedReader br = new BufferedReader(new FileReader("Dates.txt"));
-		String[] line;
-		//reads through each line passing it to addToArray, stopping if line is NULL
+		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Gunter\\eclipse-workspace\\Project03\\src\\Dates.txt"));
+		
+
 		String strg = br.readLine();
 		while (strg != null) {	
-			line = strg.split(".");
+			addToHash(strg);
 			strg = br.readLine();
 		}
 		br.close();
 	}
-	private void addToHash(String[] line) {
+	private void addToHash(String strg) {		
+		String[] line = strg.split("\\.");
 		DATES.put(LocalDate.of
 				(
 						Integer.parseInt(line[2]), 
