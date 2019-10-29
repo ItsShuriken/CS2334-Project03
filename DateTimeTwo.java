@@ -5,9 +5,12 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class DateTimeTwo {
@@ -77,7 +80,7 @@ public class DateTimeTwo {
 		   Period difference = key.until(now);
 		    	
 		   System.out.println(key.getYear() + leapYear + ", and Difference: " + difference.getYears() + " years, " + 
-		    		difference.getMonths() + " months, and " + difference.getDays() + "days.");
+		    		difference.getMonths() + " months, and " + difference.getDays() + " days.");
 		
 		} //for	
 	}
@@ -93,7 +96,14 @@ public class DateTimeTwo {
 	}
 	
 	public void dateHashMapSorted() {
-		// TODO Auto-generated method stub
+		List<LocalDate> LDA = new ArrayList<LocalDate>();
+		LDA.addAll(DATES.keySet());
+		Collections.sort(LDA);
+		
+		for (LocalDate a: LDA) {
+			System.out.println(a);
+		}
+		
 		
 	}
 
